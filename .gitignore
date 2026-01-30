@@ -1,0 +1,6 @@
+opos/
+.pytest_cache/
+.env
+__pychache__/
+*.pyc 
+*.pyo 
