@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>List of Orders</title>
+        <link rel="stylesheet" href="{{ url_for('pizza_client_bp.static', filename='css/styles.css')}}">
+        <link rel="stylesheet" href="{{ url_for('pizza_client_bp.static', filename='css/bootstrap.min.css')}}">
+        <script src="{{ url_for('pizza_client_bp.static', filename='js/jquery-3.6.4.js') }}"></script>
+        <script src="{{ url_for('pizza_client_bp.static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    </head>
+    <body>
+        <section class="positive-relative py-4 py-xl-5">
+            <div class="positive-relative container">
+                <div class="row d-flex">
+                    <div class="col-md-8 col-xl-6 text-center mx-auto">
+                        <h3>List Of Pizzas</h3>
+                        <p class="w-lg-50"><strong><em>REST Client Page</em></strong></p>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="container positive-relative">
+                        <div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="black white-text">
+                                        <tr>
+                                            <th scope="col">ID#</th>
+                                            <th scope="col">Code</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Category ID</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for p in pizzas %}
+                                        <tr>
+                                            <th scope="row">{{p['id']}}</th>
+                                            <th>{{p['code']}}</th>
+                                            <th>{{p['name']}}</th>
+                                            <th>{{p['price']}}</th>
+                                            <th>{{p['catid']}}</th>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <footer class="text-center py-4">
+                                <div class="container">
+                                    <div class="row row-cols-1 row-cols-lg-3">
+                                        <div class="col">
+                                            <p class="text-muted my-2">CPTR</p>
+                                        </div>
+                                        <div class="col">
+                                            <ul class="list-inline my-2">
+                                                <li class="list-inline-item"><a class="link-secondary" href="#">##</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
