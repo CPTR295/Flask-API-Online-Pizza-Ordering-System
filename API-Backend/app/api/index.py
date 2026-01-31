@@ -34,10 +34,10 @@ def accespt_patch():
     print(request.get_json())
     return 'Success',201
 
-@current_app.route('/index',methods=['GET'])
+@current_app.route("/index", methods = ['GET'])
 def index():
-    resp = make_response(jsonify(message='This is an online pizza ordering system',today=date.today()),200)
-    return resp
+   response = make_response(jsonify(message='This is an Online Pizza Ordering System.', today=date.today()), 200)
+   return response
 
 @current_app.route("/introduction", methods = ['GET'])
 def introduction():
